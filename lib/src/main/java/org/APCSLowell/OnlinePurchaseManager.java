@@ -11,7 +11,12 @@ public class OnlinePurchaseManager {
      * whose manufacturer is maker, as described in part (a).
      */
     public int countElectronicsByMaker(String maker) {
-        /* to be implemented in part (a) */
+        int num  = 0; 
+        for( Gizmo g: purchases)
+            if (g.iselctronic() && g.getmaker.equals(maker)) {
+               num++; 
+            }
+            return num;
 
     }
 
@@ -19,8 +24,12 @@ public class OnlinePurchaseManager {
      * equivalent, and false otherwise, as described in part (b).
      */
     public boolean hasAdjacentEqualPair() {
-        /* to be implemented in part (b) */
-
+        for( int i = 0; i < purchases.size() -1; i ++){
+            if( purchases.get(i).equal( purchases.get(i+1))){
+                return true;
+            }
+        }
+        return false;
     }
     public OnlinePurchaseManager() {
         purchases = new ArrayList <Gizmo>();
